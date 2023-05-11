@@ -50,7 +50,7 @@ var oldestCustomer = function(array){
             return accumulator;
         }
     })
-    return oldest;
+    return oldest.name;
 };
 
 var youngestCustomer;
