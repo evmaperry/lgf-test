@@ -72,7 +72,14 @@ var averageBalance = function(array){
 };
 
 
-var firstLetterCount;
+var firstLetterCount = function(array, letter){ //Find how many customer's names begin with a given letter , upper and lowercase
+    let startsWithLetter = _.filter(array, function(customer){
+        let customerName = customer.name.toLowerCase();
+        let startChar = letter.toLowerCase();
+        return customerName[0] === startChar;
+    })
+    return startsWithLetter.length;
+};
 
 var friendFirstLetterCount;
 
