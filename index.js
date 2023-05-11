@@ -37,7 +37,6 @@ var femaleCount = function(array){
         }
         return accumulator;
     }, 0)
-    
     return count;
 }
 
@@ -53,7 +52,14 @@ var oldestCustomer = function(array){
     return oldest.name;
 };
 
-var youngestCustomer;
+var youngestCustomer = function(array){
+    let youngest = _.reduce(array, function(accumulator, current){
+        if (current.age < accumulator.age){
+            return current;
+        } else {return accumulator;}
+    })
+    return youngest.name;
+};
 
 
 // customer's balance property is a weird string that needs to be formatted, can use reg ex and replace all to exclude punctuations, or replaceAll
