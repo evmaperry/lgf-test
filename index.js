@@ -41,10 +41,22 @@ var femaleCount = function(array){
     return count;
 }
 
-var oldestCustomer;
+// use reduce without a seed
+var oldestCustomer = function(array){
+    let oldest = _.reduce(array, function(accumulator, current){
+        if (current.age > accumulator.age){
+            return current;
+        } else {
+            return accumulator;
+        }
+    })
+    return oldest;
+};
 
 var youngestCustomer;
 
+
+// customer's balance property is a weird string that needs to be formatted, can use reg ex and replace all to exclude punctuations, or replaceAll
 var averageBalance;
 
 var firstLetterCount;
