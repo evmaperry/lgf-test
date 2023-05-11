@@ -63,7 +63,14 @@ var youngestCustomer = function(array){
 
 
 // customer's balance property is a weird string that needs to be formatted, can use reg ex and replace all to exclude punctuations, or replaceAll
-var averageBalance;
+var averageBalance = function(array){
+    let balanceSum = _.reduce(array, function(accumulator, current){
+        let parsedBalance = parseFloat(current.balance.replaceAll(/["$,]/g, ""));
+        accumulator += parsedBalance;
+    }, 0) 
+    return (balanceSum / array.length);
+};
+
 
 var firstLetterCount;
 
