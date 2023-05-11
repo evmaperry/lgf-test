@@ -81,7 +81,9 @@ var firstLetterCount = function(array, letter){ //Find how many customer's names
     return startsWithLetter.length;
 };
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(array, customer, letter){
+
+}; //  filter out object by name, then firstLetterCount it, Find how many friends of a given customer have names that start with a given letter , `Array`, `Customer`, `Letter`
 
 var friendsCount;
 
