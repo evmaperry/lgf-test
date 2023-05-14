@@ -104,7 +104,38 @@ var friendsCount = function(array, name){
     return filteredResult.map(person => person.name);
   };
 
-var topThreeTags;
+  var topThreeTags = function(array){
+    let allTagsArray = array.reduce(function(accumulator, current){
+      //accumulator.push(current.tags);
+      let currentTags = current.tags
+      currentTags.forEach(x=> accumulator.push(x));
+      return accumulator;
+    }, [])
+  
+    let objectOfTags = allTagsArray.reduce(function(accumulator, current){
+       if (!accumulator[current]){
+         accumulator[current] = 1;
+         return accumulator;
+       } else {
+         accumulator[current] += 1;
+         return accumulator;
+       }
+           ;
+    }, {})
+  
+    let top3 = {key1: 0, key2: 0, key3:0};
+      
+    for (let key in objectOfTags){
+      for (let key2 in top3){
+        if (objectOfTags[key] > top3[key2]){
+          delete top3[key2];
+          top3[key] = objectOfTags[key];
+          break;
+        }
+      }
+    }
+    return Object.keys(top3);  
+  };
 
 var genderCount;
 
