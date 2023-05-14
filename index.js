@@ -137,7 +137,14 @@ var friendsCount = function(array, name){
     return Object.keys(top3);  
   };
 
-var genderCount;
+  var genderCount = function(array){
+    let countObject = array.reduce(function(accumulator, current){
+      accumulator[current.gender] += 1;
+      return accumulator;
+    }, {"male": 0, "female": 0, "non-binary": 0})
+  
+    return countObject;
+  };
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
